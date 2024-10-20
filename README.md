@@ -8,8 +8,8 @@ cd C:\Users\recetas_Grupo2\envs\entorno\scripts
 cd C:\Users\recetas_Grupo2\receta
 
 ## Levantar el proyecto
-python manage.py runserver
+python manage.py runserve
 
 # El usuario y contraseña para ingresar al admin es:
-Usuario: Grupo2
+Usuario: advs045049@gmail.com
 Contraseña: recetas123
