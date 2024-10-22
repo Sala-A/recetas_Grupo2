@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'calificaciones',
+    'dosificar',
+    'ingredientes',
+    'recetas',
 ]
 
 MIDDLEWARE = [
@@ -75,17 +79,17 @@ WSGI_APPLICATION = 'receta.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.mysql',
-'NAME': 'recetas_db',
-'USER': 'root',
-'PASSWORD': '',
-'HOST': '127.0.0.1',
-'PORT': '3306',
-'OPTIONS': {
-'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-},
-}
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'recetas_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
+    }
 }
 
 
@@ -122,8 +126,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
+import os
 
 STATIC_URL = 'static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
