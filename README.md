@@ -9,7 +9,7 @@ python -m venv envs/"nombre_del_entorno"
 
 .\envs\"nombre_del_entorno"\Scripts\activate
 
--- instalar todos los frameworks que hemos usado en el proyecto (el comando está hecho para que se ejecute en la carpeta donde estén, 
+-- instalar todos los frameworks que hemos usado en el proyecto (el comando está hecho para que se ejecute en la carpeta donde estén)
 ejemplo: (entorno) PS D:\Programacion\CURSOS\Django\envs> pip install -r requirements.txt)
 
 pip install -r requirements.txt
