@@ -2,14 +2,17 @@
 --Descargar el archivo "requirements.txt" y dejarlo en la carpeta ENVS
 
 --Crear el nuevo entorno
--- python -m venv envs/"nombre_del_entorno"
+
+python -m venv envs/"nombre_del_entorno"
 
 -- activar el entorno
--- .\envs\"nombre_del_entorno"\Scripts\activate
+
+.\envs\"nombre_del_entorno"\Scripts\activate
 
 -- instalar todos los frameworks que hemos usado en el proyecto (el comando está hecho para que se ejecute en la carpeta donde estén, 
 ejemplo: (entorno) PS D:\Programacion\CURSOS\Django\envs> pip install -r requirements.txt)
--- pip install -r requirements.txt
+
+pip install -r requirements.txt
 
 ## ir a los Scripts
 cd C:\Users\recetas_Grupo2\envs\entorno\scripts
