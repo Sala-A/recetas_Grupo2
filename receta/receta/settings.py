@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'drf_yasg',
     'users',
     'calificaciones',
     'dosificar',
@@ -81,7 +83,7 @@ WSGI_APPLICATION = 'receta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'recetas_db',
+        'NAME': 'recetas_db2',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
