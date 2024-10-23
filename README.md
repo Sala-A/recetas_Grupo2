@@ -19,7 +19,9 @@ cd C:\Users\recetas_Grupo2\envs\entorno\scripts
 
 ## activar Entorno Directamente
 .\envs\entorno\Scripts\activate
+
 OR
+
 .\recetas_Grupo2\envs\entorno\scripts\activate
 
 ## activar el entorno
