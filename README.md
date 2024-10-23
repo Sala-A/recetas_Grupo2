@@ -1,6 +1,11 @@
 ## ir a los Scripts
 cd C:\Users\recetas_Grupo2\envs\entorno\scripts
 
+## activar Entorno Directamente
+.\envs\entorno\Scripts\activate
+OR
+.\recetas_Grupo2\envs\entorno\scripts\activate
+
 ## activar el entorno
 ./activate
 
@@ -11,5 +16,6 @@ cd C:\Users\recetas_Grupo2\receta
 python manage.py runserver
 
 # El usuario y contraseña para ingresar al admin es:
-Usuario: advs045049@gmail.com
+Correo: advs045049@gmail.com
+Usuario: Grupo2
 Contraseña: recetas123
