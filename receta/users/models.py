@@ -8,5 +8,5 @@ class User (AbstractUser):
     email = models.EmailField(unique=True)
     
     #Comentar En Caso De Crear Mas Super Usuarios
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    # USERNAME_FIELD = 'email'
+    # REQUIRED_FIELDS = []

@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'receta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'recetas_db2',
+        'NAME': 'recetas_db4',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
@@ -125,6 +125,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        )
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/

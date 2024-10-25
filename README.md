@@ -1,11 +1,11 @@
 ## ir a los Scripts
-cd C:\Users\recetas_Grupo2\envs\entorno\scripts
+cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\envs\entorno\Scripts
 
 ## activar el entorno
 ./activate
 
 ## volver al proyecto
-cd C:\Users\recetas_Grupo2\receta
+cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\receta
 
 ## Levantar el proyecto
 python manage.py runserver
