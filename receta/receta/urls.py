@@ -22,6 +22,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from recetas.api.router import router_recetas
 from dosificar.api.router import router_dosificar
+from calificaciones.api.router import router_calificaciones
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -43,4 +44,5 @@ urlpatterns = [
     path('api/', include('users.api.router')),
     path('api/', include(router_recetas.urls)),
     path('api/', include(router_dosificar.urls)),
+    path('api/', include(router_calificaciones.urls)),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
