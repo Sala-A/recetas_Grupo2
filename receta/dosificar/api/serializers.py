@@ -8,10 +8,10 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'email', 'username']
-        ref_name = 'DosificarUser'  # Nombre único para evitar conflictos
+        ref_name = 'DosificarUser'
 
-class IngredienteSerializer(serializers.ModelSerializer):
-    id_usuario = UserSerializer(read_only=True)  # Relación con User
+class IngredienteSerializers(serializers.ModelSerializer):
+    id_usuario = UserSerializer(read_only=True)
 
     class Meta:
         model = Ingrediente
@@ -24,8 +24,8 @@ class IngredienteSerializer(serializers.ModelSerializer):
             'id_usuario'
         ]
 
-class RecetaSerializer(serializers.ModelSerializer):
-    id_usuario = UserSerializer(read_only=True)  # Relación con User
+class RecetaSerializers(serializers.ModelSerializer):
+    id_usuario = UserSerializer(read_only=True)
 
     class Meta:
         model = Receta
@@ -40,9 +40,9 @@ class RecetaSerializer(serializers.ModelSerializer):
             'id_usuario'
         ]
 
-class DosificarSerializer(serializers.ModelSerializer):
-    id_ingrediente = IngredienteSerializer(read_only=True)  # Relación con Ingrediente
-    id_receta = RecetaSerializer(read_only=True)  # Relación con Receta
+class DosificarSerializers(serializers.ModelSerializer):
+    id_ingrediente = IngredienteSerializers(read_only=True)
+    id_receta = RecetaSerializers(read_only=True) 
 
     class Meta:
         model = Dosificar
