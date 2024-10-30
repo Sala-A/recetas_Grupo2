@@ -19,4 +19,10 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=User
-        fields=['id','email','username','first_name','last_name']
+        fields=['id','email','username']
+
+#Serializador para actualizar los datos de los usuarios
+class UserUpdateSerializer(serializers.ModelSerializer):
+   class Meta:
+       model = User 
+       fields=['email']
