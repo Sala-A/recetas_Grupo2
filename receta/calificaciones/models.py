@@ -15,3 +15,8 @@ class Calificacion(models.Model):
     class Meta:
         managed = False
         db_table = 'calificaciones'
+
+    def save(self, *args, **kwargs):
+        if not (1 <= self.puntuacion <= 5):
+            raise ValueError("La puntuación entre 1 y 5")
+        super().save(*args, **kwargs)
