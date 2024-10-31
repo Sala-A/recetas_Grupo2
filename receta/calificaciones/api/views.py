@@ -1,7 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
-from calificaciones.models import Calificacion  # Asegúrate de que este es el nombre correcto
-from calificaciones.api.serializers import CalificacionSerializers  # Corrige el nombre del serializador
+from calificaciones.models import Calificacion
+from calificaciones.api.serializers import CalificacionSerializers
+from calificaciones.api.permissions import IsAuthenticatedToCreate
 
 class CalificacionApiViewSet(ModelViewSet):
-    serializer_class = CalificacionSerializers  # Asegúrate de usar el nombre correcto del serializador
-    queryset = Calificacion.objects.all()  # Asegúrate de que este es el nombre correcto del modelo
+    permission_classes = [IsAuthenticatedToCreate]
+    serializer_class = CalificacionSerializers
+    queryset = Calificacion.objects.all()
