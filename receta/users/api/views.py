@@ -24,6 +24,8 @@ class UserView(APIView):
         serializer = UserSerializer(request.user)
         return Response(serializer.data)
     
+    
+    #sobreescribir para modificar los datos del usuario logeado
     def put(self, request):
         user = User.objects.get(id=request.user.id)
         serializer = UserUpdateSerializer(user, request.data)

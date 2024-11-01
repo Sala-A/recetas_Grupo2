@@ -47,4 +47,5 @@ urlpatterns = [
     path('api/', include(router_dosificar.urls)),
     path('api/', include(router_calificaciones.urls)),
     path('api/', include(router_ingredientes.urls)),
+    
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
