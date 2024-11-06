@@ -15,7 +15,7 @@ ejemplo: (entorno) PS D:\Programacion\CURSOS\Django\envs> pip install -r require
 pip install -r requirements.txt
 
 ## ir a los Scripts
-cd C:\Users\recetas_Grupo2\envs\entorno\scripts
+cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\envs\entorno\Scripts
 
 ## activar Entorno Directamente
 .\envs\entorno\Scripts\activate
@@ -28,7 +28,8 @@ OR
 ./activate
 
 ## volver al proyecto
-cd C:\Users\recetas_Grupo2\receta
+cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\receta
+cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\client_recetas
 
 ## Levantar el proyecto
 python manage.py runserver
