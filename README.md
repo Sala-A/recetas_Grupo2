@@ -6,6 +6,7 @@ cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\envs\entorno\Scripts
 
 ## volver al proyecto
 cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\receta
+cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\client_recetas
 
 ## Levantar el proyecto
 python manage.py runserver
