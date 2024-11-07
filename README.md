@@ -14,6 +14,9 @@ ejemplo: (entorno) PS D:\Programacion\CURSOS\Django\envs> pip install -r require
 
 pip install -r requirements.txt
 
+## Bootstrap 5
+npm install bootstrap@5.3.3
+
 ## ir a los Scripts
 cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\envs\entorno\Scripts
 
