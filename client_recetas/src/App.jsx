@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "../src/page/Home";
 import { RecetasList } from "./page/RecetasList";
 import { Navigation } from "./components/Navigation";
-import { LogIn } from "./page/LogIn";
-//import { Footer } from "./components/Footer";
+import { Crear } from "./page/Crear";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -13,8 +13,9 @@ function App() {
         <Route path="/" element={<Navigate to="/Home" />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/RecetasList" element={<RecetasList />} />
-        <Route path="/LogIn" element={<LogIn />} />
+        <Route path="/Crear" element={<Crear />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

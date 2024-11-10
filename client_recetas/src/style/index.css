@@ -6,12 +6,24 @@
   --verde: #4CBD49;
   /*color: var(--naranja); => Así es como deben utilizarse las variables para estos colores */
 }
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body{
   background: #FFFFFF;
   color: #474747;
   font-family: "Playfair Display", serif;
 }
-h1,h2,h3,h4,h5,h6{
+h1,h2,h3,h4,h5,h6,label{
   font-family: "Montserrat", sans-serif;
+}
+input {
+  outline: none;
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }

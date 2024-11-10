@@ -1,18 +1,40 @@
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
+  const footerStyle = {
+    backgroundColor: "#4E3629",
+    color: "#FFFFFF",
+    padding: "1rem 0",
+  };
+  const logoStyle = {
+    fontSize: "3rem",
+    fontWeight: "bold",
+    textDecoration: "none",
+    color: "#FFFFFF",
+  };
+  const linkStyle = {
+    color: "#FFFFFF",
+    textDecoration: "none",
+    margin: "0 0.5rem",
+  };
+
   return (
-    <footer>
-      <nav>
-        <Link to="Facebook.com"><img src="" alt="Facebook" /></Link>
-        <Link to="Instagram.com"><img src="" alt="Instagram" /></Link>
-        <Link to="/">Home</Link>
-        <Link to="/recetasList">Recetas</Link>
-        <Link to="/LogIn">Log In</Link>
-        <Link to="#"><img src="" alt="Lupa" /></Link>
+    <footer style={footerStyle}>
+      <nav className="d-flex justify-content-center align-items-center mb-3">
+        <Link to="/" className="text-white mx-2" style={linkStyle}>
+          Home
+        </Link>
+        <Link to="/recetasList" className="text-white mx-2" style={linkStyle}>
+          Ver recetas
+        </Link>
+        <Link to="/Crear" className="text-white mx-2" style={linkStyle}>
+          Crear receta
+        </Link>
       </nav>
-      <hr />
-      <div className="logo"><Link to="/">Logo</Link></div>
+      <hr className="border-top border-white" />
+      <div className="text-center">
+        <Link to="/" style={logoStyle}>Logo</Link>
+      </div>
     </footer>
   );
 };
