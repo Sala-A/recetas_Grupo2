@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+#Importaciones de apis propias
 from recetas.api.router import router_recetas
 from dosificar.api.router import router_dosificar
 from calificaciones.api.router import router_calificaciones
