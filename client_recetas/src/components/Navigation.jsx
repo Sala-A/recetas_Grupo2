@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const Navigation = () => {
   return (
-    <nav className="navbar navbar-expand-xl">
+    <nav className="navbar navbar-expand-xl" style={{marginBottom:"2rem"}}>
       <div className="container-fluid">
         <div className="d-grid grid-template-columns-2 " style={{marginLeft:'400px'}}>
           <Link className="navbar-brand" style={{position:'relative', right:'100px', fontSize:'4em',fontWeight:'bold',background:'#4CBD49',padding:'0 30px',color:'white'}} to="/">
@@ -33,7 +33,7 @@ export const Navigation = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Crear">
+              <Link className="nav-link" to="/Recetas-add">
                 Crear recetas
               </Link>
             </li>

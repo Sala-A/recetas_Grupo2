@@ -5,4 +5,7 @@ const recetasApi = axios.create({
 })
 
 export const getAllRecetas = () => recetasApi.get("/");
+export const getReceta = (id) => recetasApi.get("/" + id + "/");
 export const createRecetas = (receta) => recetasApi.post("/",receta);
+export const deleteRecetas = (id) => recetasApi.delete("/" + id + "/");
+export const updateReceta = (id,receta) => recetasApi.put("/" + id + "/", receta);

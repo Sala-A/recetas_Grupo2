@@ -5,6 +5,7 @@ export const Footer = () => {
     backgroundColor: "#4E3629",
     color: "#FFFFFF",
     padding: "1rem 0",
+    marginTop: "2rem",
   };
   const logoStyle = {
     fontSize: "3rem",

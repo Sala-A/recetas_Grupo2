@@ -1,15 +1,23 @@
-import { createRecetas } from "../api/Recetas.api";
+import { useEffect, useState } from "react";
+import {
+  createRecetas,
+  deleteRecetas,
+  getReceta,
+  updateReceta,
+} from "../api/Recetas.api";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const Crear = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm();
-
   const navigate = useNavigate();
+  const params = useParams();
+  const [imagenUrl, setImagenUrl] = useState("");
 
   const onSubmit = async (data) => {
     const formData = new FormData();
@@ -24,19 +32,48 @@ export const Crear = () => {
     }
 
     try {
-      const res = await createRecetas(formData, {});
-      console.log(res);
-      navigate("/Home");
+      if (params.id) {
+        console.log("Modificado...");
+        await updateReceta(params.id, formData);
+      } else {
+        const res = await createRecetas(formData);
+        console.log(res);
+      }
+      navigate("/RecetasList");
     } catch (error) {
       console.error("Error en la solicitud:", error.response?.data);
     }
+  };
+
+  useEffect(() => {
+    async function loadReceta() {
+      if (params.id) {
+        console.log("solicitar datos");
+        const res = await getReceta(params.id);
+        console.log(res);
+        setValue("nombre", res.data.nombre);
+        setValue("descripcion", res.data.descripcion);
+        setValue("tiempo_preparacion", res.data.tiempo_preparacion);
+        setValue("numero_comensales", res.data.numero_comensales);
+        setValue("categoria", res.data.categoria);
+        setImagenUrl(res.data.imagen);
+      }
+    }
+    loadReceta();
+  }, [params.id, setValue]);
+
+  const botones = {
+    margin: "auto",
+    width: "300px",
+    color: "#fff",
+    fontSize: "1.8rem",
   };
 
   return (
     <div className="container py-4">
       <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
         <h1 className="mb-4 text-center" style={{ color: "#FC4B08" }}>
-          Crear una receta
+          Gestión de recetas
         </h1>
 
         <label htmlFor="nombre" className="mb-2">
@@ -105,10 +142,21 @@ export const Crear = () => {
         <label htmlFor="imagen" className="mb-2">
           Imagen
         </label>
+        {imagenUrl && (
+          <div className="mb-3">
+            <img
+              src={imagenUrl}
+              alt="Imagen actual de la receta"
+              style={{ maxWidth: "200px", borderRadius: "10px" }}
+            />
+          </div>
+        )}
         <input
           id="imagen"
           {...register("imagen", {
-            required: "Poner una imagen relacionada con tu receta",
+            required: params.id
+              ? false
+              : "Poner una imagen relacionada con tu receta",
           })}
           type="file"
           accept="image/*"
@@ -134,21 +182,33 @@ export const Crear = () => {
         {errors.numero_comensales && (
           <p className="text-danger">{errors.numero_comensales.message}</p>
         )}
-
+        <div className="d-flex justify-content-center gap-3 mt-3"></div>
         <button
           type="submit"
           className="btn"
-          style={{
-            margin:'auto',
-            width: "300px",
-            backgroundColor: "#FC4B08",
-            color: "#fff",
-            fontSize: "1.8rem",
-          }}
+          style={{ ...botones, backgroundColor: "#4CBD49" }}
         >
           Guardar
         </button>
+        <div />
       </form>
+      {params.id && (
+        <div className="d-flex justify-content-center mt-3">
+          <button
+            style={{ ...botones, backgroundColor: "#FC4B08" }}
+            className="btn"
+            onClick={async () => {
+              const accepted = window.confirm("¿Deseas eliminar esta receta?");
+              if (accepted) {
+                await deleteRecetas(params.id);
+                navigate("/recetasList");
+              }
+            }}
+          >
+            Eliminar
+          </button>
+        </div>
+      )}
     </div>
   );
 };

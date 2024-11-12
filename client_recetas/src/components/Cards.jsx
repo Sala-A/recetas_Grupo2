@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function Cards({ receta }) {
+  const navigate = useNavigate();
   return (
     <div className="container">
       <div
@@ -10,7 +13,14 @@ export default function Cards({ receta }) {
           justifyContent: "center",
         }}
       >
-        <div className="card" style={{border:'solid 1px #4CBD49',boxShadow: "0 2px 4px 0 rgba(76, 189, 73, 0.5)", width:'26rem'}}>
+        <div
+          className="card"
+          style={{
+            border: "solid 1px #4CBD49",
+            boxShadow: "0 2px 4px 0 rgba(76, 189, 73, 0.5)",
+            width: "26rem",
+          }}
+        >
           <img
             src={receta.imagen}
             className="card-img-top"
@@ -45,8 +55,7 @@ export default function Cards({ receta }) {
               />
               {receta.numero_comensales} comensales
             </p>
-            <a
-              href="#"
+            <button
               className="btn mt-2 w-100"
               style={{
                 backgroundColor: "#FC4B08",
@@ -54,8 +63,22 @@ export default function Cards({ receta }) {
                 fontWeight: "bold",
               }}
             >
-              Ver receta
-            </a>
+              Detalle de la receta
+            </button>
+            <span
+              onClick={() => {
+                navigate("/recetas/" + receta.id_receta);
+              }}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "10px",
+                color: "#4CBD49",
+                cursor: "pointer",
+              }}
+            >
+              Opciones de edición
+            </span>
           </div>
         </div>
       </div>

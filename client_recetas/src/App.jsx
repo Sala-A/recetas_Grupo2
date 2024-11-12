@@ -13,7 +13,8 @@ function App() {
         <Route path="/" element={<Navigate to="/Home" />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/RecetasList" element={<RecetasList />} />
-        <Route path="/Crear" element={<Crear />} />
+        <Route path="/Recetas-add" element={<Crear />} />
+        <Route path="/recetas/:id" element={<Crear />} />
       </Routes>
       <Footer />
     </BrowserRouter>
