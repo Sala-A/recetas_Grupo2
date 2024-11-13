@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
-export default function Cards({ receta }) {
+export default function Cards({ receta, style }) {
   const navigate = useNavigate();
   return (
-    <div className="container">
+    <div className="container" style={style}>
       <div
         className="recetas-grid"
         style={{

@@ -4,9 +4,9 @@ export const Navigation = () => {
   return (
     <nav className="navbar navbar-expand-xl" style={{marginBottom:"2rem"}}>
       <div className="container-fluid">
-        <div className="d-grid grid-template-columns-2 " style={{marginLeft:'400px'}}>
-          <Link className="navbar-brand" style={{position:'relative', right:'100px', fontSize:'4em',fontWeight:'bold',background:'#4CBD49',padding:'0 30px',color:'white'}} to="/">
-            Logo
+        <div className="d-grid grid-template-columns-2 " style={{marginLeft:'200px'}}>
+          <Link className="navbar-brand" style={{position:'relative', right:'100px', fontSize:'4em',fontWeight:'bold',color:'#FC4B08', userSelect: 'none',}} to="/">
+          SazónApp
           </Link>
         </div>
         <button

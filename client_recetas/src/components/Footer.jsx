@@ -6,12 +6,14 @@ export const Footer = () => {
     color: "#FFFFFF",
     padding: "1rem 0",
     marginTop: "2rem",
+    marginBottom:'0',
   };
   const logoStyle = {
     fontSize: "3rem",
     fontWeight: "bold",
     textDecoration: "none",
     color: "#FFFFFF",
+    userSelect: "none",
   };
   const linkStyle = {
     color: "#FFFFFF",
@@ -20,7 +22,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer style={footerStyle}>
+    <footer style={footerStyle} className="mt-auto">
       <nav className="d-flex justify-content-center align-items-center mb-3">
         <Link to="/" className="text-white mx-2" style={linkStyle}>
           Home
@@ -34,7 +36,7 @@ export const Footer = () => {
       </nav>
       <hr className="border-top border-white" />
       <div className="text-center">
-        <Link to="/" style={logoStyle}>Logo</Link>
+        <Link to="/" style={logoStyle}>SazónApp</Link>
       </div>
     </footer>
   );
