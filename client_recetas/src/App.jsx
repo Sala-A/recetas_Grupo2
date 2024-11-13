@@ -7,7 +7,7 @@ import { Footer } from "./components/Footer";
 import { Login } from "./page/Login";
 import { Register } from "./page/Register";
 import { NoFound } from "./page/NoFound";
-import { ProtectedRoute } from "./components/ProtectedRoute";
+//import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function Logout() {
   localStorage.clear();
@@ -24,7 +24,7 @@ function App() {
     <BrowserRouter>
       <Navigation />
       <Routes>
-        <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>} />
+      <Route path="/" element={<Home />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Logout" element={<Logout />} />
         <Route path="/Register" element={<RegisterAndLogout />} />
@@ -39,3 +39,5 @@ function App() {
 }
 
 export default App;
+{/* <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>} /> */}
+ 
