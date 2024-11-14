@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'dosificar',
     'ingredientes',
     'recetas',
+    'pasos',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +87,7 @@ WSGI_APPLICATION = 'receta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'recetas_db4',
+        'NAME': 'recetas_db2',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',

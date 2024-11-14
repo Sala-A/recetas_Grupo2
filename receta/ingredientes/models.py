@@ -6,6 +6,8 @@ from recetas.models import Receta
 class Ingrediente(models.Model):
     id_ingredientes = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=200)
+    cantidad = models.FloatField(max_length=200)
+    unidad = models.CharField(max_length=10)
     id_receta = models.ForeignKey(Receta, models.DO_NOTHING, db_column='id_receta')
 
     class Meta:

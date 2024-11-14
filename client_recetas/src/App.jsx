@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer";
 import { Login } from "./page/Login";
 import { Register } from "./page/Register";
 import { NoFound } from "./page/NoFound";
+import { DetallesReceta } from "./page/DetallesReceta";
 //import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function Logout() {
@@ -31,6 +32,8 @@ function App() {
         <Route path="/RecetasList" element={<RecetasList />} />
         <Route path="/Recetas-add" element={<Crear />} />
         <Route path="/recetas/:id" element={<Crear />} />
+        <Route path="/DetallesReceta" element={<DetallesReceta/>} />
+        <Route path="/DetallesReceta/:id" element={<DetallesReceta/>} />
         <Route path="*" element={<NoFound />} />
       </Routes>
       <Footer />

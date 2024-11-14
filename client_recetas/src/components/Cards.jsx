@@ -56,6 +56,9 @@ export default function Cards({ receta, style }) {
               {receta.numero_comensales} comensales
             </p>
             <button
+              onClick={() => {
+                navigate("/DetallesReceta/" + receta.id_receta);
+              }}
               className="btn mt-2 w-100"
               style={{
                 backgroundColor: "#FC4B08",
