@@ -33,7 +33,7 @@ function App() {
         <Route path="/Recetas-add" element={<Crear />} />
         <Route path="/recetas/:id" element={<Crear />} />
         <Route path="/DetallesReceta" element={<DetallesReceta/>} />
-        <Route path="/DetallesReceta/:id" element={<DetallesReceta/>} />
+        <Route path="/DetallesReceta/:id_receta" element={<DetallesReceta/>} />
         <Route path="*" element={<NoFound />} />
       </Routes>
       <Footer />

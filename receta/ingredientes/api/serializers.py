@@ -23,6 +23,7 @@ class IngredientesSerializers(serializers.ModelSerializer):
         model = Ingrediente
         fields = [
             'id_ingredientes', 
+            'nombre',
             'cantidad',
             'unidad',  
             'id_receta'
