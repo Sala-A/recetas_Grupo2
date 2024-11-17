@@ -8,7 +8,7 @@ export default function Cards({ receta, style }) {
         className="recetas-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(18rem, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(18rem, 1fr))", 
           gap: "2rem",
           justifyContent: "center",
         }}
