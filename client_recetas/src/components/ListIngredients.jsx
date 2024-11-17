@@ -13,8 +13,6 @@ export function ListIngredients() {
       const res = await getAllIngredientes();
       setIngredientes(res.data);
 
-      const recetaId = parseInt(id_receta, 10);
-
       const filteredIngredientes = res.data.filter(
         ingrediente => ingrediente.id_receta === recetaId
       );

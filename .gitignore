@@ -15,6 +15,7 @@ dist-ssr
 
 # Editor directories and files
 .vscode/*
+receta/receta/settings.py
 !.vscode/extensions.json
 .idea
 .DS_Store
@@ -28,3 +29,4 @@ dist-ssr
 *.pyc
 __pycache__/
 *.pyo
+

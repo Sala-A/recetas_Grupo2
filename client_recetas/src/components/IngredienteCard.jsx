@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { createIngredientes } from "../api/Ingredientes.api";
 
 export function IngredienteCard() {
   const navigate = useNavigate();
+  const { id_receta } = useParams();
   const {
     register,
     handleSubmit,
@@ -11,9 +12,9 @@ export function IngredienteCard() {
   } = useForm();
 
   const onsubmit = handleSubmit(async (data) => {
-    console.log(data);
     try {
-      const res = await createIngredientes(data);
+      const dataWithId = { ...data, id_receta };
+      const res = await createIngredientes(dataWithId);
       console.log(res);
       navigate(`/Ingredientes/${res.data.id}`);
     } catch (error) {
@@ -86,21 +87,6 @@ export function IngredienteCard() {
           </select>
           {errors.unidad && (
             <span className="text-danger">{errors.unidad.message}</span>
-          )}
-        </div>
-        <div className="mb-3">
-          <input
-            type="number"
-            placeholder="ID Receta"
-            className="form-control"
-            style={{
-              borderColor: "#4CBD49",
-              backgroundColor: "#fff",
-            }}
-            {...register("id_receta", { required: "ID requerido" })}
-          />
-          {errors.id_receta && (
-            <span className="text-danger">{errors.id_receta.message}</span>
           )}
         </div>
         <button

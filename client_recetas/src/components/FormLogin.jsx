@@ -24,9 +24,9 @@ export function FormLogin({ route, method }) {
       if (method === "login") {
         localStorage.setItem(ACCESS_TOKEN, res.data.access);
         localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
-      
+
         console.log("Tokens guardados:", res.data.access, res.data.refresh);
-      
+
         // Asegurarnos de que se navegue después de que los tokens estén guardados
         setTimeout(() => {
           navigate("/");
@@ -94,7 +94,7 @@ export function FormLogin({ route, method }) {
                   backgroundColor: "#FC4B08",
                   color: "#fff",
                   fontSize: "1.2em",
-                  fontWeight:"bold"
+                  fontWeight: "bold"
                 }}
               >
                 {name}
