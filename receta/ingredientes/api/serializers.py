@@ -22,8 +22,9 @@ class IngredientesSerializers(serializers.ModelSerializer):
     class Meta:
         model = Ingrediente
         fields = [
-            'id_ingredientes', 
-            'cantidad',
-            'unidad',  
+            'id_ingredientes',
+            'nombre',
+            'cantidad', 
+            'unidad',
             'id_receta'
         ]

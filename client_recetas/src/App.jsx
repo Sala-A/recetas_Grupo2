@@ -8,6 +8,7 @@ import { Login } from "./page/Login";
 import { Register } from "./page/Register";
 import { NoFound } from "./page/NoFound";
 import { DetallesReceta } from "./page/DetallesReceta";
+import { Ingredientes } from "./page/Ingredientes";
 //import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function Logout() {
@@ -34,6 +35,8 @@ function App() {
         <Route path="/recetas/:id" element={<Crear />} />
         <Route path="/DetallesReceta" element={<DetallesReceta/>} />
         <Route path="/DetallesReceta/:id" element={<DetallesReceta/>} />
+        <Route path="/Ingredientes-add" element={<Ingredientes/>} />
+        <Route path="/Ingredientes/:id" element={<Ingredientes/>} />
         <Route path="*" element={<NoFound />} />
       </Routes>
       <Footer />

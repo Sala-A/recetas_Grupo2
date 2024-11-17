@@ -5,6 +5,7 @@ from recetas.models import Receta
 
 class Paso(models.Model):
     id_pasos = models.AutoField(primary_key=True)
+    nombre = models.TextField(max_length=200)
     descripcion = models.TextField(max_length=1000)
     id_receta = models.ForeignKey(Receta, models.DO_NOTHING, db_column='id_receta')
 

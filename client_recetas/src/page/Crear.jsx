@@ -9,15 +9,15 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const Crear = () => {
+  const navigate = useNavigate();
+  const params = useParams();
+  const [imagenUrl, setImagenUrl] = useState("");
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
   } = useForm();
-  const navigate = useNavigate();
-  const params = useParams();
-  const [imagenUrl, setImagenUrl] = useState("");
 
   const onSubmit = async (data) => {
     const formData = new FormData();
@@ -32,14 +32,15 @@ export const Crear = () => {
     }
 
     try {
+      let idReceta;
       if (params.id) {
-        console.log("Modificado...");
         await updateReceta(params.id, formData);
+        idReceta = params.id;
       } else {
         const res = await createRecetas(formData);
-        console.log(res);
+        idReceta = res.data.id_receta;
       }
-      navigate("/RecetasList");
+      navigate(params.id ? "/recetasList" : `/Ingredientes/${idReceta}`);
     } catch (error) {
       console.error("Error en la solicitud:", error.response?.data);
     }
@@ -48,9 +49,7 @@ export const Crear = () => {
   useEffect(() => {
     async function loadReceta() {
       if (params.id) {
-        console.log("solicitar datos");
         const res = await getReceta(params.id);
-        console.log(res);
         setValue("nombre", res.data.nombre);
         setValue("descripcion", res.data.descripcion);
         setValue("tiempo_preparacion", res.data.tiempo_preparacion);
@@ -63,10 +62,10 @@ export const Crear = () => {
   }, [params.id, setValue]);
 
   const botones = {
-    margin: "auto",
-    width: "300px",
+    width: "250px",
     color: "#fff",
-    fontSize: "1.8rem",
+    fontSize: "1.4rem",
+    textAlign: "center",
   };
 
   return (
@@ -182,33 +181,46 @@ export const Crear = () => {
         {errors.numero_comensales && (
           <p className="text-danger">{errors.numero_comensales.message}</p>
         )}
-        <div className="d-flex justify-content-center gap-3 mt-3"></div>
-        <button
-          type="submit"
-          className="btn"
-          style={{ ...botones, backgroundColor: "#4CBD49" }}
-        >
-          Guardar
-        </button>
-        <div />
-      </form>
-      {params.id && (
-        <div className="d-flex justify-content-center mt-3">
+
+        <div className="d-flex justify-content-between align-items-center mt-4">
           <button
-            style={{ ...botones, backgroundColor: "#FC4B08" }}
+            type="submit"
             className="btn"
-            onClick={async () => {
-              const accepted = window.confirm("¿Deseas eliminar esta receta?");
-              if (accepted) {
-                await deleteRecetas(params.id);
-                navigate("/recetasList");
-              }
-            }}
+            style={{ ...botones, backgroundColor: "#4CBD49" }}
           >
-            Eliminar
+            Guardar todo
           </button>
+
+          {params.id && (
+            <>
+              <button
+                type="button"
+                className="btn"
+                style={{ ...botones, backgroundColor: "grey" }}
+                onClick={() => navigate(`/Ingredientes/${params.id}`)}
+              >
+                Siguiente
+              </button>
+
+              <button
+                style={{ ...botones, backgroundColor: "#FC4B08" }}
+                className="btn"
+                onClick={async () => {
+                  const accepted = window.confirm(
+                    "¿Deseas eliminar esta receta?"
+                  );
+                  if (accepted) {
+                    await deleteRecetas(params.id);
+                    navigate("/recetasList");
+                  }
+                }}
+              >
+                Eliminar receta
+              </button>
+            </>
+          )}
         </div>
-      )}
+      </form>
     </div>
   );
 };

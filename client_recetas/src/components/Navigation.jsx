@@ -2,11 +2,25 @@ import { Link } from "react-router-dom";
 
 export const Navigation = () => {
   return (
-    <nav className="navbar navbar-expand-xl" style={{marginBottom:"2rem"}}>
+    <nav className="navbar navbar-expand-xl" style={{ marginBottom: "2rem" }}>
       <div className="container-fluid">
-        <div className="d-grid grid-template-columns-2 " style={{marginLeft:'200px'}}>
-          <Link className="navbar-brand" style={{position:'relative', right:'100px', fontSize:'4em',fontWeight:'bold',color:'#FC4B08', userSelect: 'none',}} to="/">
-          SazónApp
+        <div
+          className="d-grid grid-template-columns-2 "
+          style={{ marginLeft: "200px" }}
+        >
+          <Link
+            className="navbar-brand"
+            style={{
+              position: "relative",
+              right: "100px",
+              fontSize: "4em",
+              fontWeight: "bold",
+              color: "#FC4B08",
+              userSelect: "none",
+            }}
+            to="/"
+          >
+            SazónApp
           </Link>
         </div>
         <button
@@ -35,6 +49,11 @@ export const Navigation = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/Recetas-add">
                 Crear recetas
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Login">
+                Log In
               </Link>
             </li>
           </ul>
