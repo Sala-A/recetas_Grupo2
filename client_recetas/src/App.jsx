@@ -37,6 +37,7 @@ function App() {
         <Route path="/DetallesReceta/:id" element={<DetallesReceta/>} />
         <Route path="/Ingredientes-add" element={<Ingredientes/>} />
         <Route path="/Ingredientes/:id" element={<Ingredientes/>} />
+        <Route path="/DetallesReceta/:id_receta" element={<DetallesReceta/>} />
         <Route path="*" element={<NoFound />} />
       </Routes>
       <Footer />

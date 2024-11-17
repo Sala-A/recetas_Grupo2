@@ -25,6 +25,6 @@ class IngredientesSerializers(serializers.ModelSerializer):
             'id_ingredientes',
             'nombre',
             'cantidad', 
-            'unidad',
+            'unidad', 
             'id_receta'
         ]

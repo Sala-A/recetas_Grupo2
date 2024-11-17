@@ -27,3 +27,4 @@ dist-ssr
 # Python files to ignore
 *.pyc
 __pycache__/
+*.pyo
