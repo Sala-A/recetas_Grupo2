@@ -70,7 +70,7 @@ export function DetallesReceta() {
       <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-2">
         
         <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-2">
-          <ListIngredients id_receta={id_receta} numComensales={numComensales || 1} />
+          <ListIngredients id_receta={id_receta} />
         </div>
 
         <div>
