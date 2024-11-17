@@ -51,7 +51,7 @@ export function IngredienteCard() {
         </div>
         <div className="mb-3">
           <input
-            type="number"
+            type="text"
             placeholder="Cantidad"
             className="form-control"
             style={{
@@ -60,6 +60,10 @@ export function IngredienteCard() {
             }}
             {...register("cantidad", {
               required: "La cantidad es obligatoria",
+              pattern: {
+                value: /^[0-9]+([.][0-9]+)?$/,
+                message: "Por favor ingrese una cantidad válida",
+              },
             })}
           />
           {errors.cantidad && (
@@ -78,6 +82,7 @@ export function IngredienteCard() {
           >
             <option value="">Selecciona una unidad</option>
             <option value="g">Gramos</option>
+            <option value="lb">Libras</option>
             <option value="kg">Kilogramos</option>
             <option value="ml">Mililitros</option>
             <option value="l">Litros</option>
