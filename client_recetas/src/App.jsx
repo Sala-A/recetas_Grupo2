@@ -13,8 +13,8 @@ import { Ingredientes } from "./page/Ingredientes";
 
 import { Pasos } from "./page/Pasos";
 
-import { CalificacionForm } from "./pages/CalificacionForm";
-import { Calificacion } from "./pages/Calificacion";
+import { CalificacionForm } from "./page/CalificacionForm";
+import { Calificacion } from "./page/Calificacion";
 
 //import { ProtectedRoute } from "./components/ProtectedRoute";
 
