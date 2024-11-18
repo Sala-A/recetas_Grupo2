@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { createCalificacion, deleteCalificacion, getCalificacion, updateCalificacion } from '../api/Calificacion.api';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
-
 export function CalificacionForm() {
   const { register, handleSubmit, formState: { errors }, setValue } = useForm();
   const [image, setImage] = useState(null); // Estado para almacenar la imagen

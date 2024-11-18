@@ -9,9 +9,9 @@ import { Register } from "./page/Register";
 import { NoFound } from "./page/NoFound";
 import { DetallesReceta } from "./page/DetallesReceta";
 import { Ingredientes } from "./page/Ingredientes";
-import { IngredienteCard } from "./components/IngredienteCard";
 import { CalificacionForm } from "./page/CalificacionForm";
 import { Calificacion } from "./page/Calificacion";
+import { Pasos } from "./page/Pasos";
 //import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function Logout() {
@@ -40,8 +40,8 @@ function App() {
         <Route path="/CalificacionForm" element={<CalificacionForm />} />
         <Route path="/Calificacion/:id" element={<CalificacionForm />} />
         <Route path="/DetallesReceta/:id_receta" element={<DetallesReceta />} />
-        <Route path="/Ingredientes-add" element={<Ingredientes />} />
-        <Route path="/Ingredientes/:id_receta" element={<IngredienteCard />} /> {}
+        <Route path="/Ingredientes/:id_receta" element={<Ingredientes />} />
+        <Route path="/Pasos/:id_receta" element={<Pasos />} />
         <Route path="*" element={<NoFound />} />
       </Routes>
 

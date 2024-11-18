@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { IngredientesTable } from "../components/IngredientesTable";
+import { IngredientesTable } from "./IngredientesTable";
 import { getIngredientes, createIngredientes } from "../api/Ingredientes.api";
 
 export function IngredienteCard() {
@@ -10,7 +10,6 @@ export function IngredienteCard() {
     register,
     handleSubmit,
     reset,
-    setValue,
     formState: { errors },
   } = useForm();
   const [successMessage, setSuccessMessage] = useState("");
@@ -32,17 +31,15 @@ export function IngredienteCard() {
 
   const onsubmit = handleSubmit(async (data) => {
     if (ingredienteActual) {
-      // Editar ingrediente existente
       const updatedIngredientes = ingredientesExistentes.map((ingrediente) =>
         ingrediente.id_ingredientes === ingredienteActual.id_ingredientes
           ? { ...ingrediente, ...data }
           : ingrediente
       );
       setIngredientesExistentes(updatedIngredientes);
-      setIngredienteActual(null); // Salir del modo edición
+      setIngredienteActual(null);
       setSuccessMessage("Ingrediente actualizado exitosamente.");
     } else {
-      // Agregar nuevo ingrediente
       const ingredienteDuplicado = ingredientesExistentes.some(
         (ingrediente) =>
           ingrediente.nombre.toLowerCase() === data.nombre.toLowerCase()
@@ -54,9 +51,9 @@ export function IngredienteCard() {
       }
 
       try {
-        const newIngrediente = { ...data, id_receta }; // Crear nuevo ingrediente
+        const newIngrediente = { ...data, id_receta };
         const res = await createIngredientes(newIngrediente);
-        console.log(res); // Confirmar la respuesta del servidor
+        console.log(res);
 
         setIngredientesExistentes([...ingredientesExistentes, newIngrediente]);
         setSuccessMessage("Ingrediente agregado exitosamente.");
@@ -72,13 +69,6 @@ export function IngredienteCard() {
       setErrorMessage("");
     }, 3000);
   });
-
-  const editarIngrediente = (ingrediente) => {
-    setIngredienteActual(ingrediente); // Guardar el ingrediente que se está editando
-    setValue("nombre", ingrediente.nombre); // Rellenar el formulario
-    setValue("cantidad", ingrediente.cantidad);
-    setValue("unidad", ingrediente.unidad);
-  };
 
   const eliminarIngrediente = (id_ingredientes) => {
     const updatedIngredientes = ingredientesExistentes.filter(
@@ -96,11 +86,16 @@ export function IngredienteCard() {
         className="p-4 border rounded shadow-sm mx-auto"
         style={{ maxWidth: "400px", backgroundColor: "#ffffff" }}
       >
-        <h3 className="text-center mb-4" style={{ color: "#8C8C8C", fontWeight: "bold" }}>
+        <h3
+          className="text-center mb-4"
+          style={{ color: "#8C8C8C", fontWeight: "bold" }}
+        >
           {ingredienteActual ? "Editar Ingrediente" : "Agregar Ingrediente"}
         </h3>
         {successMessage && (
-          <div className="alert alert-success text-center">{successMessage}</div>
+          <div className="alert alert-success text-center">
+            {successMessage}
+          </div>
         )}
         {errorMessage && (
           <div className="alert alert-danger text-center">{errorMessage}</div>
@@ -131,9 +126,10 @@ export function IngredienteCard() {
             }}
             {...register("cantidad", {
               required: "La cantidad es obligatoria",
-              pattern: {
-                value: /^[0-9]+([.][0-9]+)?$/,
-                message: "Por favor ingrese una cantidad válida",
+              validate: (value) => {
+                // Verifica si el valor es un número decimal (puede ser algo como "1.5")
+                const validDecimal = /^[0-9]+(\.[0-9]+)?$/.test(value);
+                return validDecimal || "Por favor ingrese una cantidad válida";
               },
             })}
           />
@@ -169,17 +165,16 @@ export function IngredienteCard() {
           type="submit"
           className="btn w-100"
           style={{
-            backgroundColor: "#FC4B08",
+            backgroundColor: "#4CBD49",
             color: "#fff",
-            borderColor: "#FC4B08",
+            fontWeight:'bold'
           }}
         >
-          {ingredienteActual ? "Actualizar" : "Guardar"}
+          Guardar
         </button>
       </form>
       <IngredientesTable
         ingredientes={ingredientesExistentes}
-        onEditar={editarIngrediente}
         onEliminar={eliminarIngrediente}
       />
     </div>

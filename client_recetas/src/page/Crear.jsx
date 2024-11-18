@@ -190,7 +190,6 @@ export const Crear = () => {
           >
             Guardar todo
           </button>
-
           {params.id && (
             <>
               <button
