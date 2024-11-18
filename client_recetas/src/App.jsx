@@ -10,8 +10,8 @@ import { NoFound } from "./page/NoFound";
 import { DetallesReceta } from "./page/DetallesReceta";
 import { Ingredientes } from "./page/Ingredientes";
 import { IngredienteCard } from "./components/IngredienteCard";
-import { CalificacionForm } from "./pages/CalificacionForm";
-import { Calificacion } from "./pages/Calificacion";
+import { CalificacionForm } from "./page/CalificacionForm";
+import { Calificacion } from "./page/Calificacion";
 //import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function Logout() {
