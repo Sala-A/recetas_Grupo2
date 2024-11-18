@@ -5,6 +5,7 @@ import {
   getReceta,
   updateReceta,
 } from "../api/Recetas.api";
+
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -219,6 +220,7 @@ export const Crear = () => {
               </button>
             </>
           )}
+          
         </div>
       </form>
     </div>

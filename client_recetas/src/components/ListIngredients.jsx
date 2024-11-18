@@ -10,9 +10,9 @@ export function ListIngredients() {
   useEffect(() => {
     async function loadIngredientes() {
       const res = await getAllIngredientes();
-      
+
       const recetaId = parseInt(id_receta, 10);
-      
+
       const filteredIngredientes = res.data.filter(
         ingrediente => ingrediente.id_receta === recetaId
       );

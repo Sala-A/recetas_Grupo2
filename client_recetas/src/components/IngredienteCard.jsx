@@ -8,19 +8,31 @@ export function IngredienteCard() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
+
 
   const onsubmit = handleSubmit(async (data) => {
     try {
       const dataWithId = { ...data, id_receta };
       const res = await createIngredientes(dataWithId);
       console.log(res);
-      navigate(`/Ingredientes/${res.data.id}`);
+
+      reset();
     } catch (error) {
       console.error("Error al crear ingrediente:", error);
     }
   });
+
+
+  const botones = {
+    width: "250px",
+    color: "#fff",
+    fontSize: "1.4rem",
+    textAlign: "center",
+  };
+
 
   return (
     <div className="container mt-5">
@@ -31,6 +43,7 @@ export function IngredienteCard() {
           maxWidth: "400px",
           margin: "0 auto",
           backgroundColor: "#ffffff",
+          marginBottom: "5rem",
         }}
       >
         <h3 className="text-center text-dark mb-4">Agregar Ingrediente</h3>
@@ -94,17 +107,35 @@ export function IngredienteCard() {
             <span className="text-danger">{errors.unidad.message}</span>
           )}
         </div>
-        <button
-          type="submit"
-          className="btn w-100"
-          style={{
-            backgroundColor: "#FC4B08",
-            color: "#fff",
-            borderColor: "#FC4B08",
-          }}
-        >
-          Guardar
-        </button>
+
+
+        <div className="d-flex justify-content-between">
+          <button
+            type="submit"
+            className="btn btn-primary flex-fill me-2"
+            style={{
+              backgroundColor: "#FC4B08",
+              borderColor: "#FC4B08",
+            }}
+          >
+            Agregar Ingrediente
+          </button>
+
+          <button
+            type="button"
+            className="btn btn-primary flex-fill"
+            style={{
+              backgroundColor: "#FC4B08",
+              borderColor: "#FC4B08",
+            }}
+            onClick={() => navigate(`/Pasos/${id_receta}`)}
+          >
+            Siguiente
+          </button>
+        </div>
+
+
+
       </form>
     </div>
   );

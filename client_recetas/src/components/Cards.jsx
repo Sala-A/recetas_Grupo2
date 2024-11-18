@@ -11,6 +11,7 @@ export default function Cards({ receta, style }) {
           gridTemplateColumns: "repeat(auto-fit, minmax(18rem, 1fr))", 
           gap: "2rem",
           justifyContent: "center",
+          marginBottom: "5rem",
         }}
       >
         <div

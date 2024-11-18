@@ -6,27 +6,20 @@ import { useParams } from "react-router-dom";
 export function ListPasos() {
   const { id_receta } = useParams();
   const [pasos, setPasos] = useState([]);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function loadPasos() {
-      try {
-        const res = await getAllPasos();
+      const res = await getAllPasos();
 
-        const filteredPasos = res.data.filter(
-          paso => paso.id_receta === recetaId
-        );
-        setPasos(filteredPasos);
-      } catch (err) {
-        setError(err.message);
-      }
+      const recetaId = parseInt(id_receta, 10);
+
+      const filteredPasos = res.data.filter(
+        paso => paso.id_receta === recetaId
+      );
+      setPasos(filteredPasos);
     }
     loadPasos();
   }, [id_receta]);
-
-  if (error) {
-    return <p>Error cargando los pasos: {error}</p>;
-  }
 
   return (
     <>
