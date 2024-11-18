@@ -10,6 +10,8 @@ import { NoFound } from "./page/NoFound";
 import { DetallesReceta } from "./page/DetallesReceta";
 import { Ingredientes } from "./page/Ingredientes";
 import { IngredienteCard } from "./components/IngredienteCard";
+import { CalificacionForm } from "./pages/CalificacionForm";
+import { Calificacion } from "./pages/Calificacion";
 //import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function Logout() {
@@ -34,11 +36,12 @@ function App() {
         <Route path="/RecetasList" element={<RecetasList />} />
         <Route path="/Recetas-add" element={<Crear />} />
         <Route path="/recetas/:id" element={<Crear />} />
-        <Route path="/DetallesReceta" element={<DetallesReceta />} />
-        <Route path="/DetallesReceta/:id" element={<DetallesReceta />} />
+        <Route path="/Calificacion" element={<Calificacion/>} />
+        <Route path="/CalificacionForm" element={<CalificacionForm />} />
+        <Route path="/Calificacion/:id" element={<CalificacionForm />} />
+        <Route path="/DetallesReceta/:id_receta" element={<DetallesReceta />} />
         <Route path="/Ingredientes-add" element={<Ingredientes />} />
-        <Route path="/Ingredientes/:id_receta" element={<IngredienteCard />} /> {/* Ruta específica */}
-        <Route path="/Ingredientes/:id" element={<Ingredientes />} /> {/* Ruta genérica */}
+        <Route path="/Ingredientes/:id_receta" element={<IngredienteCard />} /> {}
         <Route path="*" element={<NoFound />} />
       </Routes>
 
