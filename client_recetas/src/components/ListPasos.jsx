@@ -26,7 +26,7 @@ export function ListPasos() {
       {pasos.length === 0 ? (
         <p>No hay pasos para esta receta.</p>
       ) : (
-        pasos.map(paso => <Pasos key={paso.id} paso={paso} />)
+        pasos.map(paso => <Pasos key={paso.id_pasos} paso={paso} />)
       )}
     </>
   );
