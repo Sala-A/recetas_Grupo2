@@ -1,20 +1,6 @@
 from rest_framework import serializers
-from recetas.models import Receta
 from ingredientes.models import Ingrediente
-
-class RecetasSerializers(serializers.ModelSerializer):
-    class Meta:
-        model = Receta
-        fields = [
-            'id_receta', 
-            'nombre', 
-            'descripcion', 
-            'tiempo_preparacion', 
-            'categoria', 
-            'imagen', 
-            'numero_comensales', 
-            'id_usuario'
-        ]
+from recetas.models import Receta
 
 class IngredientesSerializers(serializers.ModelSerializer):
     id_receta = serializers.PrimaryKeyRelatedField(queryset=Receta.objects.all())
@@ -22,7 +8,14 @@ class IngredientesSerializers(serializers.ModelSerializer):
     class Meta:
         model = Ingrediente
         fields = [
-            'id_ingredientes', 
-            'nombre', 
+            'id_ingredientes',
+            'nombre',
+            'cantidad', 
+            'unidad', 
             'id_receta'
         ]
+    
+    def validate(self, data):
+        if Ingrediente.objects.filter(nombre=data['nombre'], id_receta=data['id_receta']).exists():
+            raise serializers.ValidationError("El ingrediente ya existe en esta receta.")
+        return data

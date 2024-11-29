@@ -5,4 +5,4 @@ from ingredientes.models import Ingrediente
 @admin.register(Ingrediente)
 
 class IngredientesAdmin(admin.ModelAdmin):
-    list_display = ('id_ingredientes', 'nombre', 'id_receta')
+    list_display = ('id_ingredientes', 'nombre', 'cantidad', 'unidad', 'id_receta')

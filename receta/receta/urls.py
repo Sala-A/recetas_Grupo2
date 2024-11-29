@@ -20,10 +20,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+#Importaciones de apis propias
 from recetas.api.router import router_recetas
 from dosificar.api.router import router_dosificar
 from calificaciones.api.router import router_calificaciones
 from ingredientes.api.router import router_ingredientes
+from pasos.api.router import router_pasos
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -47,5 +49,6 @@ urlpatterns = [
     path('api/', include(router_dosificar.urls)),
     path('api/', include(router_calificaciones.urls)),
     path('api/', include(router_ingredientes.urls)),
+    path('api/', include(router_pasos.urls)),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
