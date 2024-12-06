@@ -17,6 +17,8 @@ dist-ssr
 .vscode/*
 receta/receta/settings.py
 <<<<<<< HEAD
+envs/entorno/*
+envs/*
 =======
 envs/entorno/*
 envs/*
