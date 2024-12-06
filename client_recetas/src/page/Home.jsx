@@ -26,7 +26,6 @@ export default function Home() {
                 width={250}
                 style={{ position: "relative", right: "25px", bottom: "10px" }}
               />
-              s
             </div>
           </div>
 
