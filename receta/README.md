@@ -5,12 +5,10 @@ cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\envs\entorno\Scripts
 ./activate
 
 ## volver al proyecto
-cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\receta
-cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\client_recetas
+cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\receta¿
 
 ## Levantar el proyecto
-python manage.py runserver
-npm run dev
+python manage.py runserver¿
 
 # El usuario y contraseña para ingresar al admin es:
 Correo: advs045049@gmail.com

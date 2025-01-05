@@ -1,16 +1,14 @@
 ## Crear Nuevo Entorno (Solo Si Es Necesario)
---Descargar el archivo "requirements.txt" y dejarlo en la carpeta ENVS
 
---Crear el nuevo entorno
+## Descargar el archivo "requirements.txt"
 
 python -m venv envs/"nombre_del_entorno"
 
--- activar el entorno
+## activar el entorno
 
 .\envs\"nombre_del_entorno"\Scripts\activate
 
--- instalar todos los frameworks que hemos usado en el proyecto (el comando está hecho para que se ejecute en la carpeta donde estén)
-ejemplo: (entorno) PS D:\Programacion\CURSOS\Django\envs> pip install -r requirements.txt)
+## instalar todos los frameworks usados en el proyecto (el comando está hecho para que se ejecute en la carpeta donde se encuentren)
 
 pip install -r requirements.txt
 
@@ -20,15 +18,11 @@ npm install bootstrap@5.3.3
 ## ir a los Scripts
 cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\envs\entorno\Scripts
 
-## activar Entorno Directamente
-.\envs\entorno\Scripts\activate
-
-OR
-
-.\recetas_Grupo2\envs\entorno\scripts\activate
-
 ## activar el entorno
 ./activate
+
+## activar Entorno Directamente
+.\recetas_Grupo2\envs\entorno\Scripts\activate
 
 ## volver al proyecto
 cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\receta
