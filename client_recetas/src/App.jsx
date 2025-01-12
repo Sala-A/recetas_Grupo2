@@ -28,7 +28,9 @@ function RegisterAndLogout() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+    >
       <div id="pagina">
         <Navigation />
 
@@ -60,5 +62,12 @@ function App() {
 
 export default App;
 {
-  <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>} />
+  <Route
+    path="/"
+    element={
+      <ProtectedRoute>
+        <Home />
+      </ProtectedRoute>
+    }
+  />;
 }
