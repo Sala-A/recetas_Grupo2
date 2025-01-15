@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function Cards({ receta, style }) {
+export default function CardReceta({ receta, style }) {
   const navigate = useNavigate();
   return (
     <div className="container" style={style}>
@@ -8,7 +8,7 @@ export default function Cards({ receta, style }) {
         className="recetas-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(18rem, 1fr))", 
+          gridTemplateColumns: "repeat(auto-fit, minmax(18rem, 1fr))",
           gap: "2rem",
           justifyContent: "center",
           marginBottom: "5rem",

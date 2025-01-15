@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "../src/page/Home";
-import { RecetasList } from "./page/RecetasList";
+import { Recetas } from "./page/Recetas";
 import { Navigation } from "./components/Navigation";
 import { Crear } from "./page/Crear";
 import { Footer } from "./components/Footer";
@@ -39,7 +39,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Logout" element={<Logout />} />
           <Route path="/Register" element={<RegisterAndLogout />} />
-          <Route path="/RecetasList" element={<RecetasList />} />
+          <Route path="/Recetas" element={<Recetas />} />
           <Route path="/Recetas-add" element={<Crear />} />
           <Route path="/recetas/:id" element={<Crear />} />
           <Route path="/Calificacion" element={<Calificacion />} />

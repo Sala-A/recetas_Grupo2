@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function RecipeSteps({ paso }) {
+export default function CardPasos({ paso }) {
   const navigate = useNavigate();
   return (
     <div className="container">
@@ -33,8 +33,7 @@ export default function RecipeSteps({ paso }) {
                 fontWeight: "bold",
                 fontSize: "1.2rem",
               }}
-            >
-            </h5>
+            ></h5>
             <p className="card-text" style={{ fontSize: "1rem" }}>
               {paso.descripcion}
             </p>

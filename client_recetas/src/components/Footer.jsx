@@ -6,7 +6,7 @@ export const Footer = () => {
     color: "#FFFFFF",
     padding: "1rem 0",
     marginTop: "2rem",
-    marginBottom: '0',
+    marginBottom: "0",
   };
   const logoStyle = {
     fontSize: "3rem",
@@ -36,7 +36,9 @@ export const Footer = () => {
       </nav>
       <hr className="border-top border-white" />
       <div className="text-center">
-        <Link to="/" style={logoStyle}>SazónApp</Link>
+        <Link to="/" style={logoStyle}>
+          SazónApp
+        </Link>
       </div>
     </footer>
   );

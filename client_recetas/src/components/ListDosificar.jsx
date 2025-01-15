@@ -41,9 +41,10 @@ export function Dosificar() {
         />
       </div>
 
-      {dosificaciones.map(dosificar => (
+      {dosificaciones.map((dosificar) => (
         <div key={dosificar.id_dosificar}>
-          <h1>{dosificar.cantidad * numComensales}</h1> {/* Recalcula la cantidad según el número de comensales */}
+          <h1>{dosificar.cantidad * numComensales}</h1>{" "}
+          {/* Recalcula la cantidad según el número de comensales */}
           <samp>{dosificar.numero_comensales}</samp>
         </div>
       ))}

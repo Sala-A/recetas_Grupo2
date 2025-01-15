@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { IngredientesTable } from "./IngredientesTable";
 import { getIngredientes, createIngredientes } from "../api/Ingredientes.api";
 
-export function IngredienteCard() {
+export function FormIngredientes() {
   const { id_receta } = useParams();
   const {
     register,
@@ -167,7 +167,7 @@ export function IngredienteCard() {
           style={{
             backgroundColor: "#4CBD49",
             color: "#fff",
-            fontWeight:'bold'
+            fontWeight: "bold",
           }}
         >
           Guardar

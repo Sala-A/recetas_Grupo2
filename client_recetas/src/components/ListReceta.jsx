@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getAllRecetas } from "../api/Recetas.api";
-import Cards from "./Cards";
+import Cards from "./CardReceta";
 
-export function ListRecet() {
+export function ListReceta() {
   const [recetas, setRecetas] = useState([]);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export function ListRecet() {
 
   return (
     <>
-      {recetas.map(receta => (
+      {recetas.map((receta) => (
         <Cards key={receta.id_receta} receta={receta} />
       ))}
     </>

@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";  
+import { useNavigate, useParams } from "react-router-dom";
 import { createPaso } from "../api/Pasos.api";
 
-export function PasosCard() {
+export function PasosForm() {
   const navigate = useNavigate();
   const { id_receta } = useParams();
   const {
@@ -44,7 +44,9 @@ export function PasosCard() {
               borderColor: "#4CBD49",
               backgroundColor: "#fff",
             }}
-            {...register("descripcion", { required: "La descripción es obligatoria" })}
+            {...register("descripcion", {
+              required: "La descripción es obligatoria",
+            })}
           ></textarea>
           {errors.descripcion && (
             <span className="text-danger">{errors.descripcion.message}</span>

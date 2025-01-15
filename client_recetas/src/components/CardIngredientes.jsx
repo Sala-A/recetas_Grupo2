@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function CardsIgredients({ ingrediente }) {
+export default function CardsIngredientes({ ingrediente }) {
   const navigate = useNavigate();
   return (
     <div className="container">
@@ -30,7 +30,13 @@ export default function CardsIgredients({ ingrediente }) {
               {ingrediente.nombre}
             </h5>
             <p className="card-text">
-              <strong>Cantidad:</strong> <span style={{ fontSize: "1.25rem" }}>{ingrediente.cantidad}</span> <strong style={{ textTransform: "uppercase" }}>{ingrediente.unidad}</strong>
+              <strong>Cantidad:</strong>{" "}
+              <span style={{ fontSize: "1.25rem" }}>
+                {ingrediente.cantidad}
+              </span>{" "}
+              <strong style={{ textTransform: "uppercase" }}>
+                {ingrediente.unidad}
+              </strong>
             </p>
           </div>
         </div>

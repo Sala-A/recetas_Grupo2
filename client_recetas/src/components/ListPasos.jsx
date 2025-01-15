@@ -14,7 +14,7 @@ export function ListPasos() {
       const recetaId = parseInt(id_receta, 10);
 
       const filteredPasos = res.data.filter(
-        paso => paso.id_receta === recetaId
+        (paso) => paso.id_receta === recetaId
       );
       setPasos(filteredPasos);
     }
@@ -26,7 +26,7 @@ export function ListPasos() {
       {pasos.length === 0 ? (
         <p>No hay pasos para esta receta.</p>
       ) : (
-        pasos.map(paso => <Pasos key={paso.id_pasos} paso={paso} />)
+        pasos.map((paso) => <Pasos key={paso.id_pasos} paso={paso} />)
       )}
     </>
   );

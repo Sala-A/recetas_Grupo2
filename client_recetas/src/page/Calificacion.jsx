@@ -1,5 +1,5 @@
-import { CalificacionList } from "../components/CalificacionList";
+import { ListCalificacion } from "../components/ListCalificacion";
 
-export function Calificacion(){
-    return <CalificacionList/>
+export function Calificacion() {
+  return <ListCalificacion />;
 }
