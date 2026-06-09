@@ -16,6 +16,7 @@ dist-ssr
 # Editor directories and files
 .vscode/*
 receta/receta/settings.py
+envs/*
 !.vscode/extensions.json
 .idea
 .DS_Store

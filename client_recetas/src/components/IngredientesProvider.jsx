@@ -16,7 +16,7 @@ export function IngredientesProvider({ children }) {
         if (res.data) {
           const recetaId = parseInt(id_receta, 10);
           const filteredIngredientes = res.data.filter(
-            (ingrediente) => ingrediente.id_receta === recetaId
+            (ingrediente) => ingrediente.id_receta === recetaId,
           );
           setIngredientes(filteredIngredientes);
         }

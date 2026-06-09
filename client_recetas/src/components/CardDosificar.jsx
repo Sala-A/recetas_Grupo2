@@ -19,13 +19,13 @@ export default function CardDosificar({ Dosificar }) {
   // Función para manejar el cambio cuando se presionan los botones
   const incrementComensales = () => {
     if (numComensales < 100) {
-      setNumComensales(prev => prev + 1);
+      setNumComensales((prev) => prev + 1);
     }
   };
 
   const decrementComensales = () => {
     if (numComensales > 1) {
-      setNumComensales(prev => prev - 1);
+      setNumComensales((prev) => prev - 1);
     }
   };
 

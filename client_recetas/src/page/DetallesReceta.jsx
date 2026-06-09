@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { ListIngredients } from "../components/ListIngredients";
+import { ListIngredientes } from "../components/ListIngredientes";
 import { ListPasos } from "../components/ListPasos";
 import { useState } from "react";
 
@@ -22,10 +22,10 @@ export function DetallesReceta() {
         Detalles De La Receta
       </h1>
 
-      <div
+      {/* <div
         style={{
           display: "flex",
-          justifyContent: "flex-start", 
+          justifyContent: "flex-start",
           alignItems: "center",
           marginBottom: "1rem",
         }}
@@ -65,12 +65,11 @@ export function DetallesReceta() {
             }}
           />
         </div>
-      </div>
+      </div> */}
 
       <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-2">
-        
         <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-2">
-          <ListIngredients id_receta={id_receta} />
+          <ListIngredientes id_receta={id_receta} />
         </div>
 
         <div>

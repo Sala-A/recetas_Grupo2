@@ -1,4 +1,4 @@
-import { PasosCard } from "../components/PasosCard";
+import { PasosForm } from "../components/FormPasos";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const Pasos = () => {
@@ -21,7 +21,7 @@ export const Pasos = () => {
           Atrás
         </button>
       </div>
-      <PasosCard />
+      <PasosForm />
     </div>
   );
 };

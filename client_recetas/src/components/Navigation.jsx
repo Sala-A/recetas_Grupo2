@@ -42,7 +42,7 @@ export const Navigation = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/recetasList">
+              <Link className="nav-link" to="/Recetas">
                 Recetas
               </Link>
             </li>

@@ -35,7 +35,7 @@ export function FormLogin({ route, method }) {
     } catch (error) {
       console.error(error);
       setErrorMessage(
-        "Error en la autenticación. Por favor, inténtelo de nuevo."
+        "Error en la autenticación. Por favor, inténtelo de nuevo.",
       );
     } finally {
       setLoading(false);
@@ -94,7 +94,7 @@ export function FormLogin({ route, method }) {
                   backgroundColor: "#FC4B08",
                   color: "#fff",
                   fontSize: "1.2em",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 {name}

@@ -1,9 +1,20 @@
-import { useEffect, useState } from 'react';
-import { createCalificacion, deleteCalificacion, getCalificacion, updateCalificacion } from '../api/Calificacion.api';
-import { useForm } from 'react-hook-form';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import {
+  createCalificacion,
+  deleteCalificacion,
+  getCalificacion,
+  updateCalificacion,
+} from "../api/Calificacion.api";
+import { useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router-dom";
+
 export function CalificacionForm() {
-  const { register, handleSubmit, formState: { errors }, setValue } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+  } = useForm();
   const [image, setImage] = useState(null); // Estado para almacenar la imagen
   const navigate = useNavigate();
   const { id } = useParams(); // Obtener el parámetro id de la URL
@@ -29,7 +40,7 @@ export function CalificacionForm() {
       }
 
       // Después de la operación, navega a la lista de calificaciones
-      navigate('/Calificacion');
+      navigate("/Calificacion");
     } catch (error) {
       console.error("Error en la operación", error);
       // Aquí puedes mostrar un mensaje de error si lo deseas
@@ -48,7 +59,7 @@ export function CalificacionForm() {
         setValue("comentario", res.data.comentario);
         setValue("fecha", res.data.fecha);
         setValue("nombre_de_receta", res.data.nombre_de_receta);
-              // Si ya existe imagen, mostrarla
+        // Si ya existe imagen, mostrarla
         setImage(res.data.imagen);
       }
     }
@@ -57,40 +68,36 @@ export function CalificacionForm() {
 
   // Función para manejar la carga de la imagen
 
-
   return (
     <div>
       <form onSubmit={onSubmit} encType="multipart/form-data">
-        <input 
-          type="number" 
-          placeholder='ID de receta' 
-          {...register("id_receta", { required: "id_receta es requerida" })} 
-          
+        <input
+          type="number"
+          placeholder="ID de receta"
+          {...register("id_receta", { required: "id_receta es requerida" })}
         />
         {errors.id_receta && <span>{errors.id_receta.message}</span>}
 
-               <input 
-          type="number" 
-          placeholder='Puntuación' 
-          {...register("puntuacion", { required: "Puntuación es requerida" })} 
+        <input
+          type="number"
+          placeholder="Puntuación"
+          {...register("puntuacion", { required: "Puntuación es requerida" })}
         />
         {errors.puntuacion && <span>{errors.puntuacion.message}</span>}
 
-        <input 
-          type="text" 
-          placeholder='Comentario' 
-          {...register("comentario", { required: "Comentario es requerido" })} 
+        <input
+          type="text"
+          placeholder="Comentario"
+          {...register("comentario", { required: "Comentario es requerido" })}
         />
         {errors.comentario && <span>{errors.comentario.message}</span>}
 
-        <input 
+        <input
           type="date"
-          placeholder='Fecha' 
-          {...register("fecha", { required: "La fecha es requerida" })} 
+          placeholder="Fecha"
+          {...register("fecha", { required: "La fecha es requerida" })}
         />
         {errors.fecha && <span>{errors.fecha.message}</span>}
-
-        
 
         <button type="submit">Guardar</button>
       </form>
