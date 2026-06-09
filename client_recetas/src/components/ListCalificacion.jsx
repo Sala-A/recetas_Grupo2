@@ -18,13 +18,13 @@ export function ListCalificacion() {
     <div>
       {calificaciones.map(
         (
-          calificacion // Usamos 'calificacion' como parámetro en el map
+          calificacion, // Usamos 'calificacion' como parámetro en el map
         ) => (
           <CalificacionCard
             key={calificacion.id_calificacion}
             calificacion={calificacion}
           />
-        )
+        ),
       )}
     </div>
   );

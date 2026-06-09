@@ -14,7 +14,7 @@ export function ListPasos() {
       const recetaId = parseInt(id_receta, 10);
 
       const filteredPasos = res.data.filter(
-        (paso) => paso.id_receta === recetaId
+        (paso) => paso.id_receta === recetaId,
       );
       setPasos(filteredPasos);
     }

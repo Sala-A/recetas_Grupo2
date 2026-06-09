@@ -34,7 +34,7 @@ export function FormIngredientes() {
       const updatedIngredientes = ingredientesExistentes.map((ingrediente) =>
         ingrediente.id_ingredientes === ingredienteActual.id_ingredientes
           ? { ...ingrediente, ...data }
-          : ingrediente
+          : ingrediente,
       );
       setIngredientesExistentes(updatedIngredientes);
       setIngredienteActual(null);
@@ -42,7 +42,7 @@ export function FormIngredientes() {
     } else {
       const ingredienteDuplicado = ingredientesExistentes.some(
         (ingrediente) =>
-          ingrediente.nombre.toLowerCase() === data.nombre.toLowerCase()
+          ingrediente.nombre.toLowerCase() === data.nombre.toLowerCase(),
       );
 
       if (ingredienteDuplicado) {
@@ -72,7 +72,7 @@ export function FormIngredientes() {
 
   const eliminarIngrediente = (id_ingredientes) => {
     const updatedIngredientes = ingredientesExistentes.filter(
-      (ingrediente) => ingrediente.id_ingredientes !== id_ingredientes
+      (ingrediente) => ingrediente.id_ingredientes !== id_ingredientes,
     );
     setIngredientesExistentes(updatedIngredientes);
     setSuccessMessage("Ingrediente eliminado exitosamente.");
