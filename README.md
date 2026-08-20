@@ -1,37 +1,67 @@
-## Crear Nuevo Entorno (Solo Si Es Necesario)
+# SazónApp
 
-## Descargar el archivo "requirements.txt"
+Proyecto desarrollado para el bootcamp *TalentoTech* usando tecnologias como Django y React.
 
-python -m venv envs/"nombre_del_entorno"
+## 1. Configuración del Backend (Django)
 
-## activar el entorno
+### Crear Nuevo Entorno (Si Es Necesario)
+```
+# Con uv (Recomendado)
+uv venv backend/.venv
 
-.\envs\"nombre_del_entorno"\Scripts\activate
+# Con Python
+python -m venv backend/.venv
+```
 
-## instalar todos los frameworks usados en el proyecto (el comando está hecho para que se ejecute en la carpeta donde se encuentren)
+### Activar Entorno
+```
+# En Linux / macOS / Git Bash:
+source ./backend/.venv/bin/activate
 
-pip install -r requirements.txt
+# En Windows (PowerShell / CMD):
+.\backend\.venv\Scripts\activate
+```
 
-## Bootstrap 5
-npm install bootstrap@5.3.3
+### Instalar Dependencias
+```
+cd ./backend/
 
-## ir a los Scripts
-cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\envs\entorno\Scripts
+# Con uv (Recomendado)
+uv pip sync ../requirements.txt
 
-## activar el entorno
-./activate
+# Con Python
+pip install -r ../requirements.txt
+```
 
-## activar Entorno Directamente
-.\recetas_Grupo2\envs\entorno\Scripts\activate
-
-## volver al proyecto
-cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\receta
-cd C:\Users\advs0\OneDrive\Escritorio\recetas_Grupo2\client_recetas
-
-## Levantar el proyecto
+### Levantar el proyecto
+```
 python manage.py runserver
+```
 
-# El usuario y contraseña para ingresar al admin es:
-Correo: advs045049@gmail.com
-Usuario: Grupo2
-Contraseña: recetas123
+## 2. Configuración del Frontend (Client)
+
+### Instalar Dependencias
+
+```
+cd ../client
+
+# Con Bun (Recomendado)
+bun install
+
+# Con npm
+npm install
+```
+
+### Levantar el proyecto
+```
+# Con Bun (Recomendado)
+bun dev
+
+# Con npm
+npm run dev
+```
+
+## 3. Credenciales del Administrador
+- Correo: advs045049@gmail.com
+- Usuario: Grupo2
+- Contraseña: recetas123
